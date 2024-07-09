@@ -14,12 +14,14 @@ void main() {
   print(list);
 
   list.removeAt(2);
-
-  // for (int i = 0; i < list.length; i++)
-  // {
-  //   if(list[i].num>20)
-  //   print('${list[i].num}');
-  // }
+  
+  //Print the Length
+  
+  for (int i = 0; i < list.length; i++)
+  {
+    if(list[i].num>20)
+    print('${list[i].num}');
+  }
 
   // for (final Lis in list) {
   //   if (Lis.num > 20) print(list);
