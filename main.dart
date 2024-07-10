@@ -51,37 +51,52 @@
 //   String toString() => 'number:$num:$position';
 // }
 //inheritance
+// void main() {
+//   // students st = students();
+//   // st.pri();
+//   // Faculty faculty = Faculty();
+//   // print(faculty.pri());
+//   Bubt stu = students();
+//   stu.pri();
+
+// }
+
+// abstract class Bubt {
+//   // int id = 12;
+//   pri() {
+//     print('bubt');
+//   }
+// }
+
+// class students extends Bubt {
+//   int? numberOfcourse;
+//   @override
+//   pri() {
+//     print('Student');
+//   }
+// }
+
+// class Faculty extends students implements Bubt {
+//   // @override
+//   // int get id => 10;
+//   final numberOfcourse = 30;
+//   @override
+//   pri() {
+//     print('object   $numberOfcourse');
+//   }
+// }
+
 void main() {
-  // students st = students();
-  // st.pri();
-  // Faculty faculty = Faculty();
-  // print(faculty.pri());
-  Bubt stu = students();
-  stu.pri();
-  
+  Intake intk = Intake();
+  intk.Printid();
 }
 
-abstract class Bubt {
-  // int id = 12;
-  pri() {
-    print('bubt');
-  }
+mixin Student {
+  int id = 10;
 }
 
-class students extends Bubt {
-  int? numberOfcourse;
-  @override
-  pri() {
-    print('Student');
-  }
-}
-
-class Faculty extends students implements Bubt {
-  // @override
-  // int get id => 10;
-  final numberOfcourse = 30;
-  @override
-  pri() {
-    print('object   $numberOfcourse');
+class Intake with Student {
+  void Printid() {
+    print('$id');
   }
 }
