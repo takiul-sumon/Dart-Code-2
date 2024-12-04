@@ -86,17 +86,66 @@
 //   }
 // }
 
+// void main() {
+//   Intake intk = Intake();
+//   intk.Printid();
+// }
+
+// mixin Student {
+//   int id = 10;
+// }
+
+// class Intake with Student {
+//   void Printid() {
+//     print('$id');
+//   }
+// }
+
+// void main() {
+//   final st = Student<String>('Sumon');
+//   print('$st.id');
+// }
+
+// class Student<T> {
+//   final T id;
+
+//   Student(this.id);
+// }
+//input a int and covert into string and print the string length
+
+// void main() {
+//   int a = 1000;
+//   String b = a.toString();
+//   print(b.length);
+// }
+
+//swap two values of Two variable
+// void main() {
+//   int a = 10;
+//   int b = 20;
+//   int temp;
+//   // temp1;
+//   // temp = b;
+//   // temp1 = a;
+//   // // b = a;
+//   // // b = temp;
+
+//   // a = temp;
+//   // b = temp1;
+//   // b = temp1;
+//   temp = b;
+//   b = a;
+//   a = temp;
+
+//   print(a);
+//   print(b);
+// }
 void main() {
-  Intake intk = Intake();
-  intk.Printid();
+  var name = Name();
+  name.location = 'Rajbari';
+  print(name.location);
 }
 
-mixin Student {
-  int id = 10;
-}
-
-class Intake with Student {
-  void Printid() {
-    print('$id');
-  }
+class Name {
+  String? location;
 }
