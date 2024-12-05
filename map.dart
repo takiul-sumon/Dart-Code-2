@@ -16,4 +16,14 @@ void main() {
   var keyList = person.keys.toList();
   var valueList = person.values.toList();
   print(valueList);
+ 
+
+  final List<Map<String, String>> counter = [
+  {
+    'first': 'Rajabari',
+    'Second': "Chapai",
+    'third': 'Rajshahi'
+  }
+  ];
+  print(counter[1]['first']);
 }
