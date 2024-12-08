@@ -16,14 +16,15 @@ void main() {
   var keyList = person.keys.toList();
   var valueList = person.values.toList();
   print(valueList);
- 
 
   final List<Map<String, String>> counter = [
-  {
-    'first': 'Rajabari',
-    'Second': "Chapai",
-    'third': 'Rajshahi'
-  }
+    {'first': 'Rajabari', 'Second': "Chapai", 'third': 'Rajshahi'}
   ];
-  print(counter[1]['first']);
+//Map to list
+  var name = {
+    'student': ['Rehan', 'Sumon', 'Mainul']
+  };
+  var studentname = name['student'] as List;
+  print(studentname[0]);
+  print(counter[0]['first']);
 }
