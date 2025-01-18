@@ -1,9 +1,16 @@
+import 'dart:async';
+
 main() async {
   print('Hi');
-  await animal();
+  var creation = await Future.wait([animal(), animal1()]);
+  print(creation);
   print('Bye');
 }
 
-animal() async {
- await Future.delayed(Duration(seconds: 3), () => print("lion"));
+Future<String> animal() {
+  return Future.delayed(Duration(seconds: 3), () => "lion");
+}
+
+Future<String> animal1() {
+  return Future.delayed(Duration(seconds: 5), () => "lion2");
 }
