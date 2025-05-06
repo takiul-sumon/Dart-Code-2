@@ -1,46 +1,75 @@
-class Solution {
-  void majorityElement(List<int> nums) {
-    int a = 0;
-    int temp;
-    List<int> uniqueElement = [];
-    List<int> uniqueElementAmount = [];
+// class Solution {
+//   int majorityElement(List<int> nums) {
+//     int majorityElement = 0;
+//     int a = 0;
+//     for (int i = 0; i < nums.length; i++) {
+//       int freqnuency = 1;
+//       for (int j = i + 1; j < nums.length; j++) {
+//         if (nums[i] == nums[j]) {
+//           freqnuency++;
+//         }
+//       }
+//       if (freqnuency > nums.length / 2) {
+//         majorityElement = nums[i];
+//       }
+//     }
+//     print(majorityElement);
+//     return majorityElement;
+//   }
+// }
 
-    List<Map<int, int>> uniqueNumber = [];
-    for (int i = 0; i < nums.length; i++) {
-      for (int j = i + 1; j < nums.length; j++) {
-        if (nums[i] > nums[j]) {
-          temp = nums[i];
-          nums[i] = nums[j];
-          nums[j] = temp;
-        }
-      }
-    }
-    for (int i = 0; i < nums.length; i++) {
-      if (i == 0 || nums[i] != nums[i - 1]) {
-        uniqueElement.add(nums[i]);
-      }
-    }
-
-    for (int i = 0; i < nums.length; i++) {
-      if (uniqueElement[0] == nums[i]) {
-        a++;
-      }
-    }
-    print(a);
-
-    //   for (int i = 0; i < uniqueElement.length; i++) {
-    //     for (int j = 0; j < nums.length; j++) {
-    //       if (uniqueElement[i] == nums[j]) {
-    //         uniqueNumber.add(Map<uniqueElement[i]: a++>);
-
-    //     }
-    //   }
-    //   print(uniqueElement);
-    // }
-  }
-}
+// class Solution {
+//   int majorityElement(List<int> nums) {
+//     int frequnecy = 1;
+//     int majorityNumber = nums[0];
+//     nums.sort();
+//     int n = nums.length;
+//     for (int i = 1; i < n; i++) {
+//       if (nums[i] == nums[i - 1]) {
+//         frequnecy++;
+//       } else {
+//         frequnecy = 1;
+//         majorityNumber = nums[i];
+//       }
+//       if (frequnecy > n / 2) {
+//         return majorityNumber;
+//       }
+//     }
+//     print(majorityNumber);
+//     return majorityNumber;
+//   }
+// }
 
 main() {
   Solution sol1 = Solution();
-  sol1.majorityElement([10, 20, 30, 40, 50, 10, 30]);
+  sol1.majorityElement([-1, 1, 1, 1, 2, 1]);
+}
+
+//Moris Voting Alogirithom
+class Solution {
+  int majorityElement(List<int> nums) {
+    int freq = 0;
+    int ans = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (freq == 0) {
+        ans = nums[i];
+      }
+      if (ans == nums[i]) {
+        freq++;
+      } else {
+        freq--;
+      }
+    }
+    int count = 0;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] == ans) {
+        count++;
+      }
+    }
+    if (count > (nums.length / 2)) {
+      return ans;
+    } else
+      return -1;
+    
+  }
 }

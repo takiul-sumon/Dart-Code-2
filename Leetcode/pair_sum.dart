@@ -41,6 +41,6 @@ class Solution {
 
 main() {
   Solution sol = Solution();
-  sol.twoSum([10, 20, 30, 50], 80);
-  print(sol.twoSum([10, 20, 30, 50], 80));
+  sol.twoSum([10, 30,50,20], 80);
+  print(sol.twoSum([10, 30,50,20], 80));
 }
