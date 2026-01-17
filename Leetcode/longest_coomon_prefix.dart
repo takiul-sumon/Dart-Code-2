@@ -15,16 +15,16 @@
 
 class Solution {
   void longestCommonPrefix(List<String> strs) {
-    // String firstValue = strs[0];
+    String firstValue = strs[0];
     strs.sort();
-    for(int i=0; i<strs.length; i++){
-      
+    for (int i = 1; i < strs.length; i++) {
+      firstValue = firstValue.substring(0, strs.length - 1);
+      print(firstValue);
     }
-    
   }
 }
 
 main() {
   Solution sol = Solution();
-  sol.longestCommonPrefix(["flower", "flow", "flight"]);
+  sol.longestCommonPrefix(["dog","racecar","car"]);
 }
